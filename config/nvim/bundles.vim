@@ -1,5 +1,5 @@
 if &compatible
-  set nocompatible
+	set nocompatible
 end
 
 " TODO YouCompleteMe

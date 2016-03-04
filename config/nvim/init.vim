@@ -1,15 +1,15 @@
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall | source $MYVIMRC
+	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+		\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
 if filereadable(expand("~/.config/nvim/bundles.vim"))
-  source ~/.config/nvim/bundles.vim
+	source ~/.config/nvim/bundles.vim
 endif
 
 if filereadable(expand("~/.config/nvim/functions.vim"))
-  source ~/.config/nvim/functions.vim
+	source ~/.config/nvim/functions.vim
 endif
 
 set shell=/bin/bash
@@ -21,7 +21,8 @@ syntax on
 au BufNewFile,BufRead *.less set filetype=css
 au BufRead,BufNewFile *.ts2 set filetype=typoscript
 au BufWritePost * silent DockSend
-au BufWritePre * :%s/\s\+$//e
+au BufWritePre * :%s/\s\+$//e "remove trailing white spaces on save
+au BufWritePre * :%s#\($\n\s*\)\+\%$##e "remove empty lines at EOF
 
 set t_Co=256 "tell the term that it has 256 colors
 set cursorline
@@ -90,14 +91,3 @@ if has('nvim')
 	nmap <BS> <C-W>h
 	nmap <bs> :<c-u>TmuxNavigateLeft<cr>
 endif
-
-
-function! StatuslineCurrentHighlight()
-    let name = synIDattr(synID(line('.'),col('.'),1),'name')
-    if name == ''
-        return ''
-    else
-        return '[' . name . ']'
-    endif
-endfunction
-
