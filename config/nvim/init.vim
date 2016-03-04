@@ -21,6 +21,7 @@ syntax on
 au BufNewFile,BufRead *.less set filetype=css
 au BufRead,BufNewFile *.ts2 set filetype=typoscript
 au BufWritePost * silent DockSend
+au BufWritePre * :%s/\s\+$//e
 
 set t_Co=256 "tell the term that it has 256 colors
 set cursorline
@@ -43,14 +44,15 @@ set number "show line numbers
 set hlsearch "highlight searches
 set hidden "hide buffers with changes and do not quit them
 set wrap "do not wrap lines
-" TODO shift/exandtab
-"set noexpandtab
-"set tabstop=4 "tabs are n spaces
-"set backspace=indent,eol,start "allow backspace in insert mode for all
-"set autoindent "always autoindent
-"set shiftwidth=4 "number of spaces used for autoindent
-"set shiftround "shift only in multiple of shiftwidth
-"set smarttab "autoindent with shiftwidth not tabstop
+set noexpandtab "use tabs for indentation
+set tabstop=4 "tabs are n spaces
+set autoindent "always autoindent
+set shiftwidth=4 "number of spaces used for autoindent
+set shiftround "shift only in multiple of shiftwidth
+autocmd FileType yaml setlocal ts=2 sw=2 expandtab
+autocmd FileType ruby,slim setlocal ts=2 sw=2 expandtab
+
+set backspace=indent,eol,start "allow backspace in insert mode for all
 set showmatch "show matching paranthesis
 set ignorecase "ignore case when searching
 set smartcase " ignore case only when all search letters are lower case
