@@ -24,3 +24,4 @@ If you just updated
 # Neovim
 
 Please install jshint with npm globally to use the javascript linting.
+Please install phplint for php linting.
