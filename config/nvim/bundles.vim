@@ -32,6 +32,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
 Plug 'easymotion/vim-easymotion'
 Plug 'shime/vim-livedown'
+Plug 'pbrisbin/vim-mkdir'
 
 " Add plugins to &runtimepath
 call plug#end()
