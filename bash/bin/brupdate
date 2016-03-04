@@ -1,0 +1,1 @@
+brew update && brew upgrade --all && brew reinstall --HEAD neovim && brew cleanup && brew doctor
