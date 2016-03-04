@@ -23,6 +23,9 @@ au BufRead,BufNewFile *.ts2 set filetype=typoscript
 au BufWritePost * silent DockSend
 au BufWritePre * :%s/\s\+$//e "remove trailing white spaces on save
 au BufWritePre * :%s#\($\n\s*\)\+\%$##e "remove empty lines at EOF
+com! Dos2Unix keepjumps call Dos2unixFunction()
+au BufReadPost * keepjumps call Dos2unixFunction()
+au BufReadPost * :%s///ge
 
 set t_Co=256 "tell the term that it has 256 colors
 set cursorline

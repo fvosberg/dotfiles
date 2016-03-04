@@ -103,3 +103,19 @@ if !exists('*InsertCurrentTimestamp')
 		execute "normal! a\<C-R>=strftime(\"%s\")\<CR>"
 	endfunction
 endif
+
+" dos2unix ^M
+fun! Dos2unixFunction()
+	let _s=@/
+	let l = line(".")
+	let c = col(".")
+	try
+		set ff=unix
+		w!
+		"%s/\%x0d$//e
+	catch /E32:/
+		echo "Sorry, the file is not saved."
+	endtry
+	let @/=_s
+	call cursor(l, c)
+endfun
