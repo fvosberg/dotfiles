@@ -88,6 +88,7 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 
 if has('nvim')
 	nmap <BS> <C-W>h
+	nmap <bs> :<c-u>TmuxNavigateLeft<cr>
 endif
 
 
