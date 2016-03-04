@@ -20,3 +20,7 @@ If you just updated
 0. ```git pull origin master```
 0. ```git submodules update```
 0. rcup
+
+# Neovim
+
+Please install jshint with npm globally to use the javascript linting.

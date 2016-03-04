@@ -33,6 +33,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'easymotion/vim-easymotion'
 Plug 'shime/vim-livedown'
 Plug 'pbrisbin/vim-mkdir'
+Plug 'scrooloose/syntastic'
 
 " Add plugins to &runtimepath
 call plug#end()
