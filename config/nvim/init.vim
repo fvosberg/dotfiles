@@ -24,8 +24,8 @@ au BufWritePost * silent DockSend
 au BufWritePre * :%s/\s\+$//e "remove trailing white spaces on save
 au BufWritePre * :%s#\($\n\s*\)\+\%$##e "remove empty lines at EOF
 com! Dos2Unix keepjumps call Dos2unixFunction()
-au BufReadPost * keepjumps call Dos2unixFunction()
-au BufReadPost * :%s///ge
+au BufReadPost * if &modifiable | keepjumps call Dos2unixFunction() | endif
+au BufReadPost * if &modifiable | :%s/$//ge | endif
 
 set t_Co=256 "tell the term that it has 256 colors
 set cursorline
@@ -94,12 +94,3 @@ if has('nvim')
 	nmap <BS> <C-W>h
 	nmap <bs> :<c-u>TmuxNavigateLeft<cr>
 endif
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0

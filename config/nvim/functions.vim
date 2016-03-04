@@ -116,6 +116,7 @@ fun! Dos2unixFunction()
 	catch /E32:/
 		echo "Sorry, the file is not saved."
 	endtry
+
 	let @/=_s
 	call cursor(l, c)
 endfun
