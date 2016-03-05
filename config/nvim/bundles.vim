@@ -2,13 +2,11 @@ if &compatible
 	set nocompatible
 end
 
-" TODO YouCompleteMe
-
 call plug#begin('~/.config/nvim/plugged')
 " Make sure you use single quotes
 
 " Group dependencies, vim-snippets depends on ultisnips
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -34,6 +32,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'shime/vim-livedown'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'scrooloose/syntastic'
+Plug 'tmhedberg/matchit'
 
 " Add plugins to &runtimepath
 call plug#end()
