@@ -8,6 +8,7 @@ alias ll='ls -lisahG'
 
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.bash/bin:$PATH
+export PATH=$PATH:$HOME/.composer/vendor/bin
 export OPENSSL_INCLUDE_DIR=/usr/local/opt/openssl/include
 export OPENSSL_ROOT_DIR=/usr/local/opt/openssl
 export DEP_OPENSSL_INCLUDE=/usr/local/opt/openssl/include

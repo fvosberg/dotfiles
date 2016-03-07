@@ -34,6 +34,7 @@ Plug 'pbrisbin/vim-mkdir'
 Plug 'scrooloose/syntastic'
 Plug 'tmhedberg/matchit'
 Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/vimproc.vim' | Plug 'm2mdas/phpcomplete-extended'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -64,6 +65,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_php_checkers=['php', 'phpcs']
+let g:syntastic_php_phpcs_args='--standard=PSR2 -n'
 
 " deoplete
 let g:deoplete#enable_at_startup = 1

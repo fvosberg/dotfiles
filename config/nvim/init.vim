@@ -55,6 +55,8 @@ set shiftwidth=4 "number of spaces used for autoindent
 set shiftround "shift only in multiple of shiftwidth
 autocmd FileType yaml setlocal ts=2 sw=2 expandtab
 autocmd FileType ruby,slim setlocal ts=2 sw=2 expandtab
+autocmd FileType php setlocal ts=4 sw=4 expandtab
+set list
 
 set backspace=indent,eol,start "allow backspace in insert mode for all
 set showmatch "show matching paranthesis
