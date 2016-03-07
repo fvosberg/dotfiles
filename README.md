@@ -14,6 +14,7 @@ If you just updated
 
     rcup
 
+
 # Updates
 
 0. Change to ```~/.dotfiles```
@@ -21,17 +22,20 @@ If you just updated
 0. ```git submodules update```
 0. rcup
 
-# Neovim
+# Installation steps for Neovim
 
-Please install jshint with npm globally to use the javascript linting.
-Please install phplint for php linting.
-Please install js-yaml via npm globally to use the yaml linter.
+0. Install python3
+0. Upgrade pip
+0. Install neovim python package via pip. ```pip3 install neovim```
+0. ```:UpdateRemotePlugins``` in Neovim
+0. ```npm install -g jshint```
+0. Install phplint for php linting: ```brew install phplint```
+0. ```npm install -g js-yaml``
 
 # TODOS
 
 * Comment Plugin for VIM
-* Autocomplete Plugin for VIM which works with snippets
-* Snippet Plugin
+* Snippet Plugin wich works with deoplete
 * Lint self enclosed script tags
 * Linting for PHP coding guidelines not only errors
 * Linting for SCSS coding guidelines not only errors

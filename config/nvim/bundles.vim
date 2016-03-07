@@ -33,6 +33,7 @@ Plug 'shime/vim-livedown'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'scrooloose/syntastic'
 Plug 'tmhedberg/matchit'
+Plug 'Shougo/deoplete.nvim'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -63,3 +64,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
