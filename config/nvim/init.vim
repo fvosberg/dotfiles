@@ -26,6 +26,7 @@ au BufWritePre * :%s#\($\n\s*\)\+\%$##e "remove empty lines at EOF
 com! Dos2Unix keepjumps call Dos2unixFunction()
 au BufReadPost * if &modifiable | keepjumps call Dos2unixFunction() | endif
 au BufReadPost * if &modifiable | :%s/$//ge | endif
+au BufReadPost,BufWritePost *.php,*.js,*.css,*.scss Neomake
 
 set t_Co=256 "tell the term that it has 256 colors
 set cursorline
@@ -37,6 +38,8 @@ com! -complete=file -nargs=* Edit silent! exec "!vim --servername " . v:serverna
 command! DockSendPo call DockSendPo()
 command! DockSendSass call DockSendSass()
 command! Timestamp call InsertCurrentTimestamp()
+com! PhpCsFixerFixDirectory call PhpCsFixerFixDirectory()
+com! PhpCsFixerFixFile call PhpCsFixerFixFile()
 
 set visualbell "DONT BEEP
 set noerrorbells "DONT BEEP
@@ -53,10 +56,10 @@ set tabstop=4 "tabs are n spaces
 set autoindent "always autoindent
 set shiftwidth=4 "number of spaces used for autoindent
 set shiftround "shift only in multiple of shiftwidth
-autocmd FileType yaml setlocal ts=2 sw=2 expandtab
-autocmd FileType ruby,slim setlocal ts=2 sw=2 expandtab
-autocmd FileType php setlocal ts=4 sw=4 expandtab
-set list
+set nolist "dont show whitespace characters
+autocmd FileType yaml setlocal ts=2 sw=2 expandtab list
+autocmd FileType ruby,slim setlocal ts=2 sw=2 expandtab list
+autocmd FileType php setlocal ts=4 sw=4 expandtab list
 
 set backspace=indent,eol,start "allow backspace in insert mode for all
 set showmatch "show matching paranthesis

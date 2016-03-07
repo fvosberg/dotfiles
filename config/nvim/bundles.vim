@@ -31,10 +31,13 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'easymotion/vim-easymotion'
 Plug 'shime/vim-livedown'
 Plug 'pbrisbin/vim-mkdir'
-Plug 'scrooloose/syntastic'
+Plug 'benekastah/neomake'
 Plug 'tmhedberg/matchit'
 Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/vimproc.vim' | Plug 'm2mdas/phpcomplete-extended'
+Plug 'stephpy/vim-php-cs-fixer'
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+Plug 'ervandew/supertab'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -57,16 +60,33 @@ let g:airline#extensions#whitespace#mixed_indent_algo = 1
 colorscheme solarized
 set background=dark
 
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_php_checkers=['php', 'phpcs']
-let g:syntastic_php_phpcs_args='--standard=PSR2 -n'
-
 " deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case=1
+
+" omnifuncs
+augroup omnifuncs
+  autocmd!
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup end
+
+" supertab
+let g:SuperTabDefaultCompletionType = "<c-n>" " start on top
+let g:SuperTabContextDefaultCompletionType = "<c-n>" " start on top
+
+" tern
+if exists('g:plugs["tern_for_vim"]')
+  let g:tern_show_argument_hints = 'on_hold'
+  let g:tern_show_signature_in_pum = 1
+
+  autocmd FileType javascript setlocal omnifunc=tern#Complete
+endif
+
+" Neomake
+let g:neomake_list_height=5
+let g:neomake_logfile="/tmp/neomake.log"
+let g:neomake_php_phpcs_args_standard='PSR2'

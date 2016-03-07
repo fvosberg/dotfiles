@@ -36,6 +36,7 @@ If you just updated
 # TODOS
 
 * Comment Plugin for VIM
+* Warn lines exceeding 80/120 characters
 * Snippet Plugin wich works with deoplete
 * Lint self enclosed script tags
 * Linting for SCSS coding guidelines not only errors
