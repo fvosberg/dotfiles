@@ -38,6 +38,7 @@ Plug 'Shougo/vimproc.vim' | Plug 'm2mdas/phpcomplete-extended'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'ervandew/supertab'
+Plug 'danro/rename.vim'
 
 " Add plugins to &runtimepath
 call plug#end()
