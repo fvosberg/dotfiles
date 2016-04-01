@@ -39,6 +39,7 @@ Plug 'stephpy/vim-php-cs-fixer'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'ervandew/supertab'
 Plug 'danro/rename.vim'
+Plug 'slim-template/vim-slim'
 
 " Add plugins to &runtimepath
 call plug#end()
