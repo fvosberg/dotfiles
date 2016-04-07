@@ -40,6 +40,7 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'ervandew/supertab'
 Plug 'danro/rename.vim'
 Plug 'slim-template/vim-slim'
+Plug 'elmar-hinz/vim.typoscript'
 Plug 'pangloss/vim-javascript'
 
 " Add plugins to &runtimepath
@@ -93,3 +94,10 @@ endif
 let g:neomake_list_height=5
 let g:neomake_logfile="/tmp/neomake.log"
 let g:neomake_php_phpcs_args_standard='PSR2'
+
+" phpcomplete
+let g:phpcomplete_index_composer_command="composer"
+
+" typoscript
+autocmd BufNewFile,BufRead */Static/setup.txt setlocal filetype=typoscript
+autocmd BufNewFile,BufRead */Static/constants.txt setlocal filetype=typoscript
