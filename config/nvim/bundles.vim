@@ -40,6 +40,7 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'ervandew/supertab'
 Plug 'danro/rename.vim'
 Plug 'slim-template/vim-slim'
+Plug 'pangloss/vim-javascript'
 
 " Add plugins to &runtimepath
 call plug#end()
