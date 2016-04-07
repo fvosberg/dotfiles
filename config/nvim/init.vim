@@ -24,8 +24,8 @@ au BufWritePost * silent DockSend
 au BufWritePre * :%s/\s\+$//e "remove trailing white spaces on save
 au BufWritePre * :%s#\($\n\s*\)\+\%$##e "remove empty lines at EOF
 com! Dos2Unix keepjumps call Dos2unixFunction()
-au BufReadPost * if &modifiable | keepjumps call Dos2unixFunction() | endif
-au BufReadPost * if &modifiable | :%s/$//ge | endif
+au BufReadPost !fugitive://* if &modifiable | keepjumps call Dos2unixFunction() | endif
+au BufReadPost !fugitive://* if &modifiable | :%s/$//ge | endif
 au BufReadPost,BufWritePost *.php,*.js,*.css,*.scss Neomake
 
 set t_Co=256 "tell the term that it has 256 colors
