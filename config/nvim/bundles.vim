@@ -42,6 +42,7 @@ Plug 'danro/rename.vim'
 Plug 'slim-template/vim-slim'
 Plug 'elmar-hinz/vim.typoscript'
 Plug 'pangloss/vim-javascript'
+Plug 'lervag/vimtex'
 
 " Add plugins to &runtimepath
 call plug#end()

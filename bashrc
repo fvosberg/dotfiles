@@ -18,6 +18,8 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export IGNOREEOF=2
+export export GOPATH=$HOME/.go
+export PATH=$PATH:$GOPATH/bin
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.bash/colors/base16-shell/base16-solarized.dark.sh"
