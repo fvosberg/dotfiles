@@ -33,7 +33,10 @@ Plug 'shime/vim-livedown'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'benekastah/neomake'
 Plug 'tmhedberg/matchit'
-Plug 'Shougo/deoplete.nvim'
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'Shougo/vimproc.vim' | Plug 'm2mdas/phpcomplete-extended'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
