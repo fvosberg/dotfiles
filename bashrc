@@ -3,6 +3,7 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 fi
 
 alias ll='ls -lisahG'
+alias ..='cd ..'
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
@@ -10,6 +11,7 @@ export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.bash/bin:$PATH
 export PATH=$PATH:$HOME/.composer/vendor/bin
 export PATH=/usr/local/sbin:$PATH
+export PATH=$PATH:/Library/TeX/texbin
 export OPENSSL_INCLUDE_DIR=/usr/local/opt/openssl/include
 export OPENSSL_ROOT_DIR=/usr/local/opt/openssl
 export DEP_OPENSSL_INCLUDE=/usr/local/opt/openssl/include
