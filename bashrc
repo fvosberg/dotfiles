@@ -57,3 +57,5 @@ last_two_directories() {
 #
 # Source: kirsle.net/wizards/ps1.html
 PS1="\n\u@\h \[$(tput bold)\]\[$(tput setaf 5)\]➜ \[$(tput setaf 6)\] \$(last_two_directories)\[$(tput setaf 3)\]\$(parse_git_branch) \[$(tput sgr0)\]"
+
+eval $(docker-machine env)

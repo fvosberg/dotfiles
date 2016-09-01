@@ -46,6 +46,7 @@ Plug 'slim-template/vim-slim'
 Plug 'elmar-hinz/vim.typoscript'
 Plug 'pangloss/vim-javascript'
 Plug 'lervag/vimtex'
+Plug 'fatih/vim-go'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -105,3 +106,12 @@ let g:phpcomplete_index_composer_command="composer"
 " typoscript
 autocmd BufNewFile,BufRead */Static/setup.txt setlocal filetype=typoscript
 autocmd BufNewFile,BufRead */Static/constants.txt setlocal filetype=typoscript
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+let g:go_fmt_command = "goimports"
