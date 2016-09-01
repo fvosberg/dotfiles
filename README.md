@@ -33,6 +33,8 @@ If you just updated
 0. ```brew install php-code-sniffer```
 0. ```npm install -g js-yaml``
 
+Maybe you have to install the powerline patched fonts for OSX and select one of them for your terminal.
+
 # TODOS
 
 * Comment Plugin for VIM

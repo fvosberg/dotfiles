@@ -66,7 +66,7 @@ let g:airline#extensions#whitespace#mixed_indent_algo = 1
 
 " solarized
 colorscheme solarized
-set background=dark
+set background=light
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
