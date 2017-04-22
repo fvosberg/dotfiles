@@ -27,7 +27,7 @@ Plug 'powerline/fonts'
 Plug 'vim-scripts/HTML-AutoCloseTag'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'easymotion/vim-easymotion'
 Plug 'shime/vim-livedown'
 Plug 'pbrisbin/vim-mkdir'
@@ -37,6 +37,7 @@ function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'Shougo/vimproc.vim' | Plug 'm2mdas/phpcomplete-extended'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
@@ -47,6 +48,7 @@ Plug 'elmar-hinz/vim.typoscript'
 Plug 'pangloss/vim-javascript'
 Plug 'lervag/vimtex'
 Plug 'fatih/vim-go'
+Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.config/nvim/plugged/gocode/vim/symlink.sh' }
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -66,12 +68,12 @@ let g:airline_theme = 'molokai'
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
 
 " solarized
-colorscheme solarized
-set background=light
+colorscheme solarized8_light_high
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case=1
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif " close preview buffer
 
 " omnifuncs
 augroup omnifuncs

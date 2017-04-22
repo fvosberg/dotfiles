@@ -28,7 +28,6 @@ au BufReadPost !fugitive://* if &modifiable | keepjumps call Dos2unixFunction() 
 au BufReadPost !fugitive://* if &modifiable | :%s/$//ge | endif
 "au BufReadPost,BufWritePost *.php,*.js,*.css,*.scss Neomake
 
-set t_Co=256 "tell the term that it has 256 colors
 set cursorline
 " status bar setup
 set laststatus=2 "show always the status line
