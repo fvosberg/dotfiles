@@ -8,7 +8,7 @@
 
 At the first setup you have to initialize the dotfiles with rcm
 
-	env RCRC=$HOME/dotfiles/rcrc rcup
+	env RCRC=$HOME/.dotfiles/rcrc rcup
 
 If you just updated
 
