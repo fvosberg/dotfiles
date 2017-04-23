@@ -1,0 +1,1 @@
+/Users/frederikvosberg/.bash/bin/vim

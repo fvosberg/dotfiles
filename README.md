@@ -27,6 +27,7 @@ If you just updated
 0. Install python3
 0. Upgrade pip
 0. Install neovim python package via pip. ```pip3 install neovim```
+0. Install neovim via homebrew ```brew install neovim/neovim/neovim```
 0. ```:VimProcInstall CC=clang``` for vimproc
 0. ```:UpdateRemotePlugins``` in Neovim
 0. ```npm install -g jshint```
@@ -37,6 +38,7 @@ Maybe you have to install the powerline patched fonts for OSX and select one of 
 
 # TODOS
 
+* Move dotfiles in a subdirectory to separate them from themes, fonts, ...
 * Comment Plugin for VIM
 * Warn lines exceeding 80/120 characters
 * Snippet Plugin wich works with deoplete

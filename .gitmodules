@@ -1,3 +1,9 @@
 [submodule "bash/bin/colors/base16-shell"]
 	path = bash/bin/colors/base16-shell
 	url = https://github.com/chriskempson/base16-shell.git
+[submodule "solarized"]
+	path = solarized
+	url = https://github.com/altercation/solarized.git
+[submodule "fonts"]
+	path = fonts
+	url = https://github.com/powerline/fonts.git
