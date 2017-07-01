@@ -4,6 +4,7 @@ fi
 
 alias ll='ls -lisahG'
 alias ..='cd ..'
+alias :q="exit"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
@@ -23,6 +24,7 @@ export LANG=en_US.UTF-8
 export IGNOREEOF=2
 export export GOPATH=$HOME/code/go
 export PATH=$PATH:$GOPATH/bin
+export CDPATH=$GOPATH/src
 
 # Base16 Shell
 #BASE16_SHELL="$HOME/.bash/colors/base16-shell/base16-solarized.light.sh"
