@@ -52,8 +52,9 @@ set hidden "hide buffers with changes and do not quit them
 set wrap "do not wrap lines
 set noexpandtab "use tabs for indentation
 set tabstop=4 "tabs are n spaces
-set autoindent "always autoindent
 set shiftwidth=4 "number of spaces used for autoindent
+set softtabstop=4 "number of spaces used while editing
+set autoindent "always autoindent
 set shiftround "shift only in multiple of shiftwidth
 set nolist "dont show whitespace characters
 autocmd FileType yaml setlocal ts=4 sw=4 expandtab list

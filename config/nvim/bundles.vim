@@ -31,7 +31,8 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'easymotion/vim-easymotion'
 Plug 'shime/vim-livedown'
 Plug 'pbrisbin/vim-mkdir'
-Plug 'benekastah/neomake'
+"Plug 'benekastah/neomake'
+Plug 'w0rp/ale'
 Plug 'tmhedberg/matchit'
 function! DoRemote(arg)
   UpdateRemotePlugins
@@ -47,7 +48,7 @@ Plug 'slim-template/vim-slim'
 Plug 'elmar-hinz/vim.typoscript'
 Plug 'pangloss/vim-javascript'
 Plug 'lervag/vimtex'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.config/nvim/plugged/gocode/vim/symlink.sh' }
 
 " Add plugins to &runtimepath
@@ -112,8 +113,22 @@ autocmd BufNewFile,BufRead */Static/constants.txt setlocal filetype=typoscript
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
+let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
+let g:go_highlight_extra_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 let g:go_fmt_command = "goimports"
+let g:go_auto_sameids = 1 " highlight same occurances of IDs when cursor is on one
+let g:go_auto_type_info = 1 " variable informations in status line
+let g:go_addtags_transform = "snakecase" " for json tags
+
+au FileType go nmap <leader>gt :GoDeclsDir<cr>
+
+" ale
+" Error and warning signs.
+let g:ale_sign_error = '⤫'
+let g:ale_sign_warning = '⚠'
+" Enable integration with airline.
+let g:airline#extensions#ale#enabled = 1
