@@ -1,0 +1,44 @@
+snippet tabletest "table driven test"
+func Test${1}(t *testing.T) {
+	tests := []struct{
+		title string
+	}{
+		{
+			title: "",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.title, func(t *testing.T) {
+			${2}
+		})
+	}
+}
+endsnippet
+
+snippet errnw "Error return wrapped "
+if err != nil {
+	return errors.Wrap(err, "${1}")
+}
+${2}
+endsnippet
+
+snippet errnwf "Error return wrapped "
+if err != nil {
+	return errors.Wrapf(err, "${1}", ${2})
+}
+${3}
+endsnippet
+
+# Fmt Printf debug
+snippet ff "fmt.Printf(...)"
+fmt.Printf("${1:${VISUAL}} = %#v\n", $1)
+endsnippet
+
+snippet errw "errors.Wrap"
+errors.Wrap(err, "${1}")${2}
+endsnippet
+
+snippet errwf "errors.Wrapf"
+errors.Wrapf(err, "${1}", ${2})${3}
+endsnippet

@@ -56,7 +56,7 @@ set autoindent "always autoindent
 set shiftwidth=4 "number of spaces used for autoindent
 set shiftround "shift only in multiple of shiftwidth
 set nolist "dont show whitespace characters
-autocmd FileType yaml setlocal ts=2 sw=2 expandtab list
+autocmd FileType yaml setlocal ts=4 sw=4 expandtab list
 autocmd FileType ruby,slim setlocal ts=2 sw=2 expandtab list
 autocmd FileType php setlocal ts=4 sw=4 expandtab list
 
